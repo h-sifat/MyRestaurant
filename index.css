@@ -1,0 +1,510 @@
+/* Default Styling */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%; /* 1rem * 62.5% = 16px * 0.625 = 10px; So now 1 rem = 10px */
+}
+
+.section-heading {
+  font-size: 12rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+
+/* End of Default Styling */
+
+/* Navbar*/
+.navbar {
+  width: 100%;
+  height: 14rem;
+  background-color: #000;
+  position: fixed;
+  top: -14rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: top 0.4s;
+}
+
+.navbar-link {
+  color: #aaa;
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: color 0.3s;
+}
+
+.change .navbar-link {
+  opacity: 1;
+}
+
+.change .navbar-link:nth-child(1) {
+  transition: opacity 0.4s 0.5s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(2) {
+  transition: opacity 0.4s 0.6s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(3) {
+  transition: opacity 0.4s 0.7s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(4) {
+  transition: opacity 0.4s 0.8s, color 0.3s;
+}
+.change .navbar-link:nth-child(5) {
+  transition: opacity 0.4s 0.9s, color 0.3s;
+}
+
+
+
+.navbar.change {
+  top: 0;
+  transition: top 0.4s 0.2s;
+}
+
+.navbar-link:hover {
+  color: #fff;
+}
+
+.menu {
+  width: 4rem;
+  height: 6rem;
+  background-color: #000;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  z-index: -100;
+  border-radius: 30rem 30rem 15rem 15rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #000, -0.1rem -0.1rem 0.1rem #000;
+  cursor: pointer;
+  transition: top 0.4s 0.2s;
+}
+
+.menu.change {
+  top: 15rem;
+}
+
+.menu::before {
+  content: "";
+  width: 0.3rem;
+  height: 15rem;
+  background-color: #000;
+  position: absolute;
+  top: -15rem;
+  left: calc(50% - 0.15rem);
+  box-shadow: 0.1rem 0 0.1rem #000;
+}
+.navbar-link i {
+  font-size: 7rem;
+}
+
+.navbar-link span {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  margin-top: 0.5rem;
+}
+/* End of Navbar*/
+
+/* Section 1 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section-1-icons {
+  margin-bottom: 20rem;
+}
+
+.section-1-icons i {
+  font-size: 32rem;
+  color: #a79a2d;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: all 0.4s;
+}
+
+.section-1-icons i.change {
+  transform: translate(-50%, -50%) scale(1);
+}
+/* End of Section 1*/
+
+/* Section 2 */
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 30rem;
+  background-color: #a79a2d;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before {
+  content: "";
+  height: 100%;
+  width: 1rem;
+  background-color: #817824;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: skewY(45deg);
+  transform-origin: right;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card::after {
+  content: "";
+  height: 1rem;
+  width: 100%;
+  background-color: #8f8317;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #111;
+  margin: 2rem 0;
+  text-shadow: 0.15rem 0.15rem 0.15rem #000;
+}
+
+.card-btn {
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+  background-color: #111;
+  color: #888;
+  border-radius: 5rem;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  box-shadow: -0.2rem -0.2rem 0.2rem #000;
+}
+/* End of Section 2 */
+
+/*Section - 3*/
+.section-3 {
+  background-color: #333;
+  padding: 5rem 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+}
+
+.gallery-link {
+  position: relative;
+  margin: 4rem 2rem;
+}
+
+.gallery-link::before {
+  content: "";
+  position: absolute;
+  top: 2vw;
+  left: 80%;
+  width: 0.2rem;
+  height: 0;
+  z-index: 10;
+  background-color: #fff;
+  transition: height 0.5s;
+}
+
+.gallery-link::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 2rem;
+  width: 0;
+  height: 0.2rem;
+  z-index: 10;
+  background-color: #fff;
+  transition: width 0.5s;
+}
+
+.gallery-link:hover::before {
+  height: 80%;
+}
+
+.gallery-link:hover::after {
+  width: 90%;
+}
+
+.food-name {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.gallery-link:hover .food-name {
+  width: 100%;
+  transition: width 1.5s 0.5s;
+  /*                     delay*/
+}
+
+.food-description {
+  position: absolute;
+  bottom: 3vw;
+  top: 35%;
+  left: 2rem;
+  width: 70%;
+  height: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  overflow: scroll;
+  color: #fff;
+  text-shadow: 0.2rem 0.2rem 0.5rem #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.gallery-link:hover .food-description {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8 0.5s;
+}
+
+.food-img {
+  width: 24vw;
+  height: 15vw;
+  object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #277ce9, 0.9rem 0.9rem 0.1rem #e92999;
+  transition: all 0.4s;
+}
+
+.gallery-link:hover .food-img {
+  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+    3rem 3rem 0.1rem #277ce9, 4rem 4rem 0.1rem #e92999;
+  filter: blur(0.5rem);
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+/*End of Section -3*/
+
+/* Section -4 */
+.section-4 {
+  width: 100%;
+  height: 30vh;
+  background-color: #222;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.section-4-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #a79a2d;
+}
+
+.signup-form-input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 0.2rem solid #a79a2d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #a79a2d;
+}
+
+.section-4-paragraph {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.signup-form-button {
+  position: relative;
+  left: -5.2rem;
+  width: 5rem;
+  height: 5.1rem;
+  color: #a79a2d;
+  background-color: #333;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+  color: #eee;
+  border-top: 0.1rem solid #aaa;
+  padding-top: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* End Section -4 */
+
+/* Responsive media queries */
+@media(max-width: 1400px){
+  html {
+    font-size: 50%;
+  }
+
+  .section-2 {
+    height: auto;
+    padding: 11rem 0;
+  }
+
+  .card-container {
+    margin-top: 10rem;
+  }
+
+  .gallery-link {
+    width: 40rem;
+    height: 25rem;
+    margin: 5rem;
+  }
+
+  .food-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media(max-width: 800px){
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 60%;
+    margin: 7rem 0;
+  }
+
+  .gallery-link {
+    width: 65%;
+    height: auto;
+  }
+
+  .section-heading {
+    font-size: 8rem;
+  }
+
+  .navbar-link > i,span {
+    font-size: 5rem;
+  }
+
+  .navbar-link {
+    margin: 0 2rem;
+  }
+}
+
+@media(max-width: 625px){
+  .section-4 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 50rem;
+  }
+
+  .section-4-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .signup-form {
+    margin-left: 5.2rem;
+  }
+}
+
+@media(max-width: 550px){
+  html {
+    font-size: 40%; 
+  }
+
+  .navbar-link {
+    margin: 0.7rem;
+  }
+}
+/* End of Responsive media queries */
